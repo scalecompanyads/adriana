@@ -860,6 +860,38 @@
 
 
 
+    /* Faixa fixa no topo */
+    :root {
+      --bar-h: 40px;
+    }
+
+    .aviso-topo {
+      position: sticky;
+      top: 0;
+      z-index: 60;
+      height: var(--bar-h);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 12px;
+      background: var(--wine);
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: clamp(.7rem, 3.5vw, 1rem);
+      letter-spacing: .01em;
+      white-space: nowrap;
+      overflow: hidden;
+      box-shadow: 0 4px 14px -6px rgba(0, 0, 0, .35);
+    }
+
+    @media (max-width:360px) {
+      .choice .btn {
+        white-space: normal;
+        font-size: .9rem;
+      }
+    }
+
     /* Responsivo */
     @media (max-width:960px) {
       section {
@@ -868,8 +900,8 @@
 
       .hero {
         --shift: 0px;
-        min-height: 100vh;
-        min-height: 100svh;
+        min-height: calc(100vh - var(--bar-h));
+        min-height: calc(100svh - var(--bar-h));
         flex-direction: column;
         justify-content: flex-end;
         align-items: stretch;
@@ -1057,6 +1089,8 @@
     </symbol>
   </svg>
 
+
+  <div class="aviso-topo" role="note">Necessário Cadastro Único (CadÚnico) Atualizado</div>
 
   <main id="inicio">
 
